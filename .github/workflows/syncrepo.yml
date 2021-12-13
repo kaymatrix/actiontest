@@ -19,11 +19,13 @@ jobs:
       working-directory: ./repodst
     - run: ls
       working-directory: ./repodst
+    - run: git remote set-url origin ssh://git@github.com/kaymatrix/actiontest2.git
+      working-directory: ./repodst
     - run: git add .
       working-directory: ./repodst
     - run: git commit -m "done!"
-      working-directory: ./repodst
-    - run: git push ssh://git@github.com:kaymatrix/actiontest2.git
+      working-directory: ./repodst      
+    - run: git push
       working-directory: ./repodst
       
     - run: echo "End"
