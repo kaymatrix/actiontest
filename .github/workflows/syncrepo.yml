@@ -10,8 +10,8 @@ jobs:
     - name: checkout_dst
       uses: actions/checkout@v2   
       with:
-          repository: kaymatrix/actiontest2      
-    - uses: actions/setup-node@v2
+          repository: kaymatrix/actiontest2
+          path: ./repodst
     - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
@@ -20,8 +20,7 @@ jobs:
       uses: actions/checkout@main   
       with:
           repository: kaymatrix/actiontest
-          clean: false          
-    - uses: actions/setup-node@main
+          path: ./reposrc       
     - run: echo "Check out src repo & initialize 2 sync..."
     - run: pwd
     - run: ls
