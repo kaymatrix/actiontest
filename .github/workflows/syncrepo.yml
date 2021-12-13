@@ -20,6 +20,7 @@ jobs:
       uses: actions/checkout@main   
       with:
           repository: kaymatrix/actiontest
+          clean: false          
     - uses: actions/setup-node@main
     - run: echo "Check out src repo & initialize 2 sync..."
     - run: pwd
