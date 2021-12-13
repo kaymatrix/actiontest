@@ -12,9 +12,12 @@ jobs:
       with:
           repository: kaymatrix/actiontest2
           path: ./repodst
+          token: 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
     - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
+    - run: git push
+      working-directory: ./repodst    
     
     - name: checkout_src
       uses: actions/checkout@main   
