@@ -7,10 +7,12 @@ jobs:
     steps:
     - name: checkout_dst
       uses: actions/checkout@v2   
-      with:
+      with:          
           repository: kaymatrix/actiontest2
           path: ./repodst
+          persist-credentials: false
           github_token: ${{ secrets.MYTOKEN }}
+          
     - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
