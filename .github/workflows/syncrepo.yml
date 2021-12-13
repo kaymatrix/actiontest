@@ -25,9 +25,9 @@ jobs:
     - run: pwd
     - run: ls
     - run: chmod 755 ./reposrc/scripts/syncrepo.sh
-    - run: ./reposrc/scripts/syncrepo.sh
-      working-directory: ./repodst
+    - run: ./reposrc/scripts/syncrepo.sh      
     - run: git push
+      working-directory: ./repodst
       
     
     - run: echo "End"
