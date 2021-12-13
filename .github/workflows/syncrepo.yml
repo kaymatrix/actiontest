@@ -29,13 +29,8 @@ jobs:
     - run: git config --global user.name "kaymatrix"
     - run: git config --global user.email "kaymatrix@gmail.com"
     - run: git remote set-url origin "https://x-access-token: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@github.com/kaymatrix/actiontest2.git"
-      working-directory: ./repodst
-    - run: git add .
-      working-directory: ./repodst
-    - run: git commit -am "Automated report"
       working-directory: ./repodst    
     - run: git push
       working-directory: ./repodst
       
-    
     - run: echo "End"
