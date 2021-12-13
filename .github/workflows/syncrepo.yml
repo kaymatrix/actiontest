@@ -13,8 +13,8 @@ jobs:
     - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
-    - run: git config --global user.email "kaymatrix@users.noreply.github.com"
-    - run: git config --global user.name "kaymatrix"
+    - run: git config --global user.name 'kaymatrix'
+    - run: git config --global user.email 'kaymatrix@users.noreply.github.com'
     - run: echo "Test" > test.txt
       working-directory: ./repodst
     - run: ls
