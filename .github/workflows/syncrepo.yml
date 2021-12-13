@@ -29,7 +29,11 @@ jobs:
     - run: git config --global user.name "kaymatrix"
     - run: git config --global user.email "kaymatrix@gmail.com"
     - run: git remote set-url --push origin https://kaymatrix:$GITHUB_TOKEN@github.com/kaymatrix/actiontest2.git
-      working-directory: ./repodst    
+      working-directory: ./repodst
+    - run: git remote add gh-token "https://$GITHUB_TOKEN@github.com/:kaymatrix/:actiontest2.git"
+      working-directory: ./repodst
+    - run: git push gh-token
+      working-directory: ./repodst
     - run: git push
       working-directory: ./repodst
       
