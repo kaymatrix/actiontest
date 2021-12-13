@@ -19,6 +19,8 @@ jobs:
     - run: git config --global user.name "kaymatrix"
     - run: echo "Test" > test.txt
       working-directory: ./repodst
+    - run: ls
+      working-directory: ./repodst
     - run: git add .
       working-directory: ./repodst
     - run: git commit -m "done!"
