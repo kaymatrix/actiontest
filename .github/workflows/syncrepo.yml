@@ -26,7 +26,7 @@ jobs:
     - run: ls
     - run: chmod 755 ./reposrc/scripts/syncrepo.sh
     - run: ./reposrc/scripts/syncrepo.sh
-    - run: cd ./repodst
+    - working-directory: ./repodst
     - run: git push
       
     
