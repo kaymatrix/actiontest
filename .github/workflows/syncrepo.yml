@@ -10,38 +10,19 @@ jobs:
     - name: checkout_dst
       uses: actions/checkout@v2   
       with:
-          repository: kaymatrix/actiontest2
+          repository: kaymatrix/actiontest2		      
           path: ./repodst
           token: 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
     - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
+    - run: echo "Test" > test.txt
+      working-directory: ./repodst	
+    - run: git add .
+      working-directory: ./repodst	
+    - run: git commit -m "done!"
+      working-directory: ./repodst		  
     - run: git push
-      working-directory: ./repodst    
-    
-    - name: checkout_src
-      uses: actions/checkout@main   
-      with:
-          repository: kaymatrix/actiontest
-          path: ./reposrc       
-    - run: echo "Check out src repo & initialize 2 sync..."
-    - run: pwd
-    - run: ls
-    - run: chmod 755 ./reposrc/scripts/syncrepo.sh
-    - run: ./reposrc/scripts/syncrepo.sh      
-      
-    - name: checkin
-      uses: actions/checkout@main   
-      with:
-          repository: kaymatrix/actiontest2
-          path: ./repodst       
-          token: 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
-    - run: echo "Ready for push"
-    - run: pwd
-    - run: ls    
-    - run: git config --global user.name "kaymatrix"
-    - run: git config --global user.email "kaymatrix@gmail.com"
-    - run: git push
-      working-directory: ./repodst
+      working-directory: ./repodst 
       
     - run: echo "End"
