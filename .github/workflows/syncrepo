@@ -1,0 +1,34 @@
+name: SYNC_CMS_to_Security
+on: [push, pull_request]
+env:
+  MY_TOKEN: "${{ secrets.MY_TOKEN }}"
+jobs:
+  SYNC_REPOS:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout_dst
+      uses: actions/checkout@v2   
+      with:
+          repository: kaymatrix/actiontest2          
+          path: ./sap
+          clean: false
+          token: ${{ secrets.MY_TOKEN }}
+    - uses: actions/setup-node@v2
+    - run: echo "Check out dst repo & initialize 1 sync..."
+    - run: pwd
+    - run: ls
+    - name: checkout_src
+      uses: actions/checkout@main   
+      with:
+          repository: CMS/devops-test
+          path: ./actions
+          clean: false          
+    - uses: actions/setup-node@main
+    - run: echo "Check out src repo & initialize 2 sync..."
+    - run: pwd
+    - run: ls
+    - run: chmod 755 ./actions/syncrepo.sh
+    - run: ./actions/syncrepo.sh
+      
+    
+    - run: echo "End"
