@@ -26,7 +26,7 @@ jobs:
     - run: ls
     - run: chmod 755 ./reposrc/scripts/syncrepo.sh
     - run: ./reposrc/scripts/syncrepo.sh      
-    - run: git push
+    - run: git push https://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@github.com/kaymatrix/actiontest2.git
       working-directory: ./repodst
       
     
