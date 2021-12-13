@@ -1,7 +1,7 @@
 name: SYNC_CMS_to_Security
 on: [push, pull_request]
 env:
-  MY_TOKEN: "${{ secrets.MY_TOKEN }}"
+  GITHUB_TOKEN: "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"
 jobs:
   SYNC_REPOS:
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
     - run: ./reposrc/scripts/syncrepo.sh      
     - run: git config --global user.name "kaymatrix"
     - run: git config --global user.email "kaymatrix@gmail.com"
-    - run: git remote set-url origin "https://x-access-token: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@github.com/kaymatrix/actiontest2.git"
+    - run: git remote set-url --push origin https://kaymatrix:$GITHUB_TOKEN@github.com/kaymatrix/actiontest2.git
       working-directory: ./repodst    
     - run: git push
       working-directory: ./repodst
