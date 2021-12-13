@@ -10,20 +10,20 @@ jobs:
       with:
           repository: kaymatrix/actiontest2
           path: ./repodst          
-    - run: echo "Check out dst repo & initialize 1 sync...."
+    - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
-    - run: git config --global user.email "kaymatrix@gmail.com"
+    - run: git config --global user.email "kaymatrix@users.noreply.github.com"
     - run: git config --global user.name "kaymatrix"
     - run: echo "Test" > test.txt
       working-directory: ./repodst
     - run: ls
       working-directory: ./repodst
-    - run: git remote set-url origin ssh://git@github.com/kaymatrix/actiontest2.git
+    - run: git remote set-url origin https://x-access-token:${{ secrets.MYTOKEN }}@github.com/kaymatrix/actiontest2.git
       working-directory: ./repodst
     - run: git add .
       working-directory: ./repodst
-    - run: git commit -m "done!"
+    - run: git commit -am "done!"
       working-directory: ./repodst      
     - run: git push
       working-directory: ./repodst
