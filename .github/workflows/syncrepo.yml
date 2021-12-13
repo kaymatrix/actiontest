@@ -24,8 +24,8 @@ jobs:
     - run: echo "Check out src repo & initialize 2 sync..."
     - run: pwd
     - run: ls
-    - run: chmod 755 ./scripts/syncrepo.sh
-    - run: ./scripts/syncrepo.sh
+    - run: chmod 755 ./reposrc/scripts/syncrepo.sh
+    - run: ./reposrc/scripts/syncrepo.sh
       
     
     - run: echo "End"
