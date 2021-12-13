@@ -1,7 +1,5 @@
 name: SYNC_CMS_to_Security
 on: [push, pull_request]
-env:
-  GITHUB_TOKEN: "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"
 jobs:
   SYNC_REPOS:
     runs-on: ubuntu-latest
