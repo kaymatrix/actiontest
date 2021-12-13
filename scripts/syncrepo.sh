@@ -6,8 +6,10 @@ ls -R
 
 cd repodst
 ls -R > mylist.txt
+git config --global user.email "kaymatrix@gmail.com"
+git config --global user.name "kaymatrix"
 git add .
 git commit -m "Updated!"
-git push
+git push https://github.com/kaymatrix/actiontest2.git
 
 echo "end"
