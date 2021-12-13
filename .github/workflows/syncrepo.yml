@@ -10,7 +10,7 @@ jobs:
       with:
           repository: kaymatrix/actiontest2
           path: ./repodst          
-    - run: echo "Check out dst repo & initialize 1 sync..."
+    - run: echo "Check out dst repo & initialize 1 sync...."
     - run: pwd
     - run: ls
     - run: git config --global user.email "kaymatrix@gmail.com"
