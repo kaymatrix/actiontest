@@ -26,14 +26,18 @@ jobs:
     - run: ls
     - run: chmod 755 ./reposrc/scripts/syncrepo.sh
     - run: ./reposrc/scripts/syncrepo.sh      
+      
+    - name: checkin
+      uses: actions/checkout@main   
+      with:
+          repository: kaymatrix/actiontest2
+          path: ./repodst       
+          token: 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
+    - run: echo "Ready for push"
+    - run: pwd
+    - run: ls    
     - run: git config --global user.name "kaymatrix"
     - run: git config --global user.email "kaymatrix@gmail.com"
-    - run: git remote set-url --push origin https://kaymatrix:$GITHUB_TOKEN@github.com/kaymatrix/actiontest2.git
-      working-directory: ./repodst
-    - run: git remote add gh-token "https://$GITHUB_TOKEN@github.com/kaymatrix/actiontest2.git"
-      working-directory: ./repodst
-    - run: git push gh-token
-      working-directory: ./repodst
     - run: git push
       working-directory: ./repodst
       
