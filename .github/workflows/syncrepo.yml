@@ -23,7 +23,7 @@ jobs:
       working-directory: ./repodst
     - run: git commit -m "done!"
       working-directory: ./repodst
-    - run: git push
+    - run: git push ssh://git@github.com:kaymatrix/actiontest2.git
       working-directory: ./repodst
       
     - run: echo "End"
