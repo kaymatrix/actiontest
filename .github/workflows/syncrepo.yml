@@ -18,6 +18,8 @@ jobs:
       working-directory: ./repodst
     - run: ls
       working-directory: ./repodst
+    - run: git config --global user.name 'kaymatrix'
+    - run: git config --global user.email 'kaymatrix@gmail.com'      
     - run: git add .
       working-directory: ./repodst
     - run: git commit -am "done!"
