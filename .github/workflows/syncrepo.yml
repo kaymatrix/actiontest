@@ -9,10 +9,9 @@ jobs:
     - name: checkout_dst
       uses: actions/checkout@v2   
       with:          
-          repository: kaymatrix/actiontest2
+          repository: kaymatrix/actiontest
           path: ./repodst
-        
-    - run: echo "Check out dst repo & initialize 1 sync..."
+    
     - run: pwd
     - run: ls
     - run: git config --global user.name 'kaymatrix'
