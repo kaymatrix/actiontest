@@ -1,5 +1,6 @@
 name: SYNC_CMS_to_Security
 on: [push, pull_request]
+
 jobs:
   SYNC_REPOS:
     runs-on: ubuntu-latest
@@ -10,9 +11,7 @@ jobs:
       with:          
           repository: kaymatrix/actiontest2
           path: ./repodst
-          persist-credentials: false
-          github_token: ${{ secrets.MYTOKEN }}
-          
+        
     - run: echo "Check out dst repo & initialize 1 sync..."
     - run: pwd
     - run: ls
@@ -22,7 +21,7 @@ jobs:
       working-directory: ./repodst
     - run: ls
       working-directory: ./repodst
-    - run: git remote set-url origin "https://kaymatrix:${{ secrets.MYTOKEN }}@github.com/kaymatrix/actiontest2.git"
+    - run: git remote set-url origin "https://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@github.com/kaymatrix/actiontest2.git"
       working-directory: ./repodst
     - run: git add .
       working-directory: ./repodst
