@@ -20,8 +20,6 @@ jobs:
       working-directory: ./repodst
     - run: ls
       working-directory: ./repodst
-    - run: git remote set-url origin "https://kaymatrix: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@github.com/kaymatrix/actiontest.git"
-      working-directory: ./repodst
     - run: git add .
       working-directory: ./repodst
     - run: git commit -am "done!"
